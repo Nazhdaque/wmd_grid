@@ -1,0 +1,303 @@
+.img-responsive
+    display: block
+    max-width: 100%
+    height: auto
+
+.grid
+    display: grid
+
+.main-header
+    min-height: 100vh
+    background-size: cover
+    background-position: center
+    position: relative
+    align-content: center
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background-color: $dark
+        opacity: .92
+
+.header-content
+    z-index: 1
+    color: #fff
+    text-align: center
+    padding: 60px $gutter
+    @include media-breakpoint-down(md)
+        padding: 40px 20px
+    h1
+        font-size: 60px
+        font-family: intro-grid, sans-serif
+        font-weight: normal
+        line-height: 1.5
+        @include media-breakpoint-down(md)
+            font-size: 50px
+            line-height: 1.3
+        @include media-breakpoint-down(sm)
+            font-size: 37px
+        @include media-breakpoint-down(xs)
+            font-size: 30px
+    .button
+        margin: 10px
+        @include media-breakpoint-down(md)
+            font-size: 18px
+
+
+.portfolio-section
+    padding: 10px
+    font-size: 20px
+    grid-template-columns: repeat(4, 1fr)
+    gap: 10px
+    @include media-breakpoint-down(md)
+        grid-template-columns: repeat(3, 1fr)
+        min-height: 40vh
+        font-size: 16px
+    &.grid
+        grid-template-columns: repeat(4, 1fr)
+        grid-template-rows: repeat(3, 1fr)
+        grid-template-areas: "_1 _1 _2 _3" "_4 _5 _5 _6" "_7 _8 _9 _6"
+        @include media-breakpoint-down(md)
+            grid-template-columns: repeat(3, 1fr)
+            grid-template-rows: repeat(4, 1fr)
+            grid-template-areas: "_1 _1 _2" "_3 _4 _4" "_5 _5 _6" "_7 _8 _9"
+        @include media-breakpoint-down(sm)
+            grid-template-columns: 1fr
+            grid-template-rows: repeat(9, 1fr)
+            grid-template-areas: "_1" "_2" "_3" "_4" "_5" "_6" "_7" "_8" "_9"
+
+.portfolio-item
+    min-height: 32vh
+    background-size: cover
+    background-position: center
+    text-align: center
+    align-content: center
+    padding: $gutter
+    font-weight: bold
+    color: #fff
+    font-family: rlw-grid, sans-serif
+    position: relative
+    transition: color .5s ease
+    cursor: pointer
+    &:hover
+        color: $accent
+        &::before
+            opacity: .85
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background-color: $dark
+        opacity: .65
+        transition: opacity .5s ease
+    > *
+        z-index: 1
+        
+    &:nth-child(1)
+        grid-area: _1
+    &:nth-child(2)
+        grid-area: _2
+    &:nth-child(3)
+        grid-area: _3
+    &:nth-child(4)
+        grid-area: _4
+    &:nth-child(5)
+        grid-area: _5
+    &:nth-child(6)
+        grid-area: _6
+    &:nth-child(7)
+        grid-area: _7
+    &:nth-child(8)
+        grid-area: _8
+    &:nth-child(9)
+        grid-area: _9
+
+.buttoncase
+    grid-column: 1 / 5
+    padding: $gutter $gutter 50px
+    text-align: center
+    @include media-breakpoint-down(md)
+        grid-column: 1 / 4
+    @include media-breakpoint-down(sm)
+        grid-column: 1 / 2
+
+.container
+    max-width: 1200px
+    margin: auto
+    padding: 0 $gutter
+
+.landing-section
+    padding: 80px 0
+    @include media-breakpoint-down(md)
+        padding: 50px 0
+    @include media-breakpoint-down(xs)
+        padding: 30px 0
+    h2
+        font-size: 34px
+        font-weight: 800
+        color: $dark
+        line-height: 1.2
+    @include media-breakpoint-down(xs)
+        h2
+            font-size: 27px
+    
+.section-ready
+    background-color: $light
+    .container
+        grid-template-columns: repeat(2, 1fr)
+        @include media-breakpoint-down(sm)
+            grid-template-columns: 1fr
+            > div
+                padding: 0 8%
+                &.ready-left
+                    border: none
+
+.ready-left
+    border-right: 1px solid #DADADA
+    font-size: 18px
+    padding: 
+        top: 60px
+        bottom: 60px
+        right: 60px
+    h2
+        margin-top: 0
+        margin-bottom: 40px
+        @include media-breakpoint-down(sm)
+            text-align: center
+            font-size: 28px
+            margin-bottom: 28px
+
+.ready-right
+    padding-left: 40px
+
+.formsection
+    padding: 30px 0
+    background-color: $dark
+    .button
+        padding: 10px 20px
+    input
+        background-color: lighten($dark, 6%)
+    form
+        gap: $gutter
+        grid-template-columns: repeat(4, 1fr)
+        @include media-breakpoint-down(sm)
+            grid-template-columns: repeat(2, 1fr)
+        @include media-breakpoint-down(xs)
+            grid-template-columns: 1fr
+
+input, textarea
+    border: none
+    padding: 15px 20px
+    width: 100%
+    font-family: Arial, Helvetica, sans-serif
+    font-style: italic
+    outline: none
+    transition: background-color .25s ease
+    &:focus
+        background-color: $light
+    &::placeholder
+        color: lighten($dark, 20%)
+.section-blog
+    h2
+        margin: 0 0 50px
+        @include media-breakpoint-down(xs)
+            margin: 0 0 20px
+
+    .buttoncase
+        padding-bottom: 0
+.blog-home
+    gap: $gutter
+    grid-template-columns: repeat(4, 1fr)
+    @include media-breakpoint-down(lg)
+        grid-template-columns: repeat(3, 1fr)
+    @include media-breakpoint-down(md)
+        grid-template-columns: repeat(2, 1fr)
+    @include media-breakpoint-down(sm)
+        grid-template-columns: 1fr
+    .buttoncase
+        grid-column: 1 / 5
+        @include media-breakpoint-down(md)
+            grid-column: 1 / 3
+        @include media-breakpoint-down(sm)
+            grid-column: 1 / 2
+
+
+.blog-item
+    background-color: #f7f7f7
+    text-decoration: none
+    // grid-template-rows: repeat(2, 1fr)
+    transition: background-color .25s ease
+    overflow: hidden
+    color: #333
+    &:nth-child(3)
+        grid-column: 3 / 5
+    &:nth-child(4)
+        grid-column: 1 / 3
+    @include media-breakpoint-down(lg)
+        &:nth-child(3)
+            grid-column: 2 / 3
+            grid-row: 2
+        &:nth-child(4)
+            grid-column: 1 / 2
+            grid-row: 2
+    @include media-breakpoint-down(sm)
+        &:nth-child(3)
+            grid-column: 1 / 2 
+        &:nth-child(4)
+            grid-column: 1 / 2 
+
+    &:hover
+        text-decoration: none
+        color: #333
+        background-color: $light
+        h4
+            color: $dark
+        .blog-item-img
+            transform: scale(1.05) translateY(-6.5px)
+    &-img
+        height: 270px
+        background-size: cover
+        background-position: center
+        transition: transform .25s ease
+    &-content
+        padding: 25px
+        text-align: center
+        align-content: center
+        h4
+            font-size: 18px
+            color: #666
+            line-height: 1.3
+            transition: color .25 ease
+        p
+            margin: 10px 0 0
+
+.main-footer
+    padding: 60px 0
+    background-color: darken($dark, 8%)
+    text-align: center
+    color: #4e5355
+    @include media-breakpoint-down(xs)
+        padding: 40px 0
+
+
+.footer-logo
+    font-family: intro-grid, sans-serif
+    font-size: 22px
+    line-height: 1.16
+    span
+        display: block
+        color: #707476
+        font-size: 27px
+
+.footer-copy
+    font-size: 20px
+    font-weight: 700
+    margin-top: 20px
+    @include media-breakpoint-down(xs)
+        margin-top: 10px

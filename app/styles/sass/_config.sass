@@ -1,0 +1,62 @@
+// USER VARIABLES SECTION
+
+$accent: #F0650D // Accent Color
+$dark: #293A43
+$light: #EDEDED
+$gray: #4B5A65
+$gutter: 20px
+$fontsize: 16px // Body Font Size
+$textcolor: #333 // Text Color
+$lineheight: 1.75 // Document Line Height
+$userfont: rlw-grid, sans-serif // User Font Family
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+
+// Bootstrap compatible gutter variable => $gutter
+// $grid-gutter-width: 30px
+// $gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: url($furl) format('woff')
+
+@include font('intro-grid', normal, 400, '../fonts/IntroRegular.woff')
+@include font('rlw-grid', normal, 700, '../fonts/RalewayBold.woff')
+@include font('rlw-grid', normal, 800, '../fonts/RalewayExtraBold.woff')
+@include font('rlw-grid', normal, 400, '../fonts/RalewayRegular.woff')
+
+// GENERAL DOCUMENT STYLES
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-family: $userfont
+	font-size: $fontsize
+	line-height: $lineheight
+	color: $textcolor
+	min-width: 320px
+	position: relative
+	overflow-x: hidden
